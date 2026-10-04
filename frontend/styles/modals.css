@@ -1,0 +1,209 @@
+.modal-backdrop {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(0, 11, 12, 0.76);
+  backdrop-filter: blur(7px);
+  animation: fade-in 0.15s ease-out;
+}
+.join-modal {
+  width: min(480px, 100%);
+  max-height: min(790px, calc(100vh - 40px));
+  padding: 23px;
+  overflow-y: auto;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #f8fbff);
+  box-shadow: 0 26px 90px rgba(15, 23, 42, 0.2);
+  animation: modal-up 0.19s ease-out;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.modal-header h2 {
+  margin: 7px 0 2px;
+  font-size: 20px;
+  letter-spacing: -0.05em;
+}
+.modal-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+}
+.icon-button:hover {
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(59, 130, 246, 0.06);
+}
+.modal-close {
+  flex: 0 0 auto;
+}
+.join-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 19px 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #eff6ff;
+}
+.join-summary > div {
+  display: flex;
+  flex-direction: column;
+}
+.join-summary > div + div {
+  padding-left: 12px;
+  border-left: 1px solid var(--border);
+}
+.join-summary strong {
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+}
+.join-summary small {
+  color: var(--muted);
+  font-family: var(--font-main);
+  font-size: 9px;
+}
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 700;
+}
+.field-label input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 9px;
+  outline: none;
+  color: var(--text);
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 400;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.field-label input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+.field-label input::placeholder {
+  color: var(--muted-dark);
+}
+.field-label > small {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 400;
+}
+.optional-label {
+  align-self: flex-start;
+  margin-left: 5px;
+  padding: 2px 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+}
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--danger);
+  font-size: 10px;
+}
+.privacy-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: -2px 0 0;
+  color: var(--muted);
+  font-size: 8px;
+}
+.privacy-note .icon {
+  color: var(--primary);
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modal-up {
+  from {
+    transform: translateY(8px) scale(0.99);
+    opacity: 0.75;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+.toast {
+  position: fixed;
+  z-index: 100;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(430px, calc(100vw - 32px));
+  padding: 12px 12px 12px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  color: var(--text);
+  background: #ffffff;
+  box-shadow: 0 14px 45px rgba(15, 23, 42, 0.16);
+  font-size: 10px;
+  animation: modal-up 0.2s ease-out;
+}
+.toast > .icon {
+  color: var(--primary);
+}
+.toast-error {
+  border-color: rgba(229, 158, 145, 0.36);
+}
+.toast-error > .icon {
+  color: var(--danger);
+}
+.toast-close {
+  flex: 0 0 auto;
+  margin-left: 4px;
+}

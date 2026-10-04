@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Campus Queue Manager</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#690005","tertiary-fixed-dim":"#d0c5b4","inverse-primary":"#326766","on-primary-fixed":"#002020","on-secondary-container":"#96bfcb","surface":"#112D32","surface-tint":"#9bd0cf","on-tertiary-fixed-variant":"#4d4639","secondary":"#a4cdd9","on-error-container":"#ffdad6","on-secondary-fixed":"#001f26","primary":"#88BDBC","surface-dim":"#00161a","primary-container":"#88BDBC","primary-fixed":"#b6edeb","on-surface":"#cae8ee","on-secondary":"#06363f","on-primary-fixed-variant":"#164e4e","surface-container-lowest":"#001114","on-secondary-fixed-variant":"#234c56","tertiary-fixed":"#ece1d0","on-background":"#cae8ee","secondary-fixed-dim":"#a4cdd9","surface-container-highest":"#254E58","surface-container-high":"#1e3e46","outline":"#6E6658","on-primary":"#0f2e30","surface-container-low":"#021f24","on-tertiary":"#363024","tertiary-container":"#6E6658","background":"#112D32","outline-variant":"#4F4A41","inverse-surface":"#cae8ee","primary-fixed-dim":"#9bd0cf","inverse-on-surface":"#193439","on-primary-container":"#112D32","error-container":"#93000a","on-surface-variant":"#bfc8c7","on-tertiary-container":"#d8cdbc","on-tertiary-fixed":"#201b10","surface-container":"#062328","secondary-container":"#254E58","error":"#ffb4ab","secondary-fixed":"#c0e9f6","surface-variant":"#254E58","surface-bright":"#223d42","tertiary":"#d8cdbc","palette-teal":"#88BDBC","palette-slate":"#254E58","palette-dark":"#112D32","palette-warmdark":"#4F4A41","palette-warmgray":"#6E6658"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xs":"0.25rem","space-sm":"0.5rem",margin:"2.5rem",gutter:"1.5rem","gutter-mobile":"1rem","space-md":"1rem","margin-mobile":"1.25rem","space-lg":"1.5rem","space-xl":"2.5rem"},fontFamily:{"ticket-code-sm":["JetBrains Mono"],"label-sm":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"ticket-code":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"label-md":["JetBrains Mono"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"]},fontSize:{"ticket-code-sm":["20px",{lineHeight:"26px",letterSpacing:"0.04em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"500"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"ticket-code":["44px",{lineHeight:"48px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"500"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"display-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],"display-lg-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-[#112D32] font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-[#88BDBC] selection:text-[#112D32]"><header class="fixed top-0 left-0 right-0 z-50 bg-[#112D32]/90 backdrop-blur-md border-b border-[#254E58] shadow-[0_8px_32px_rgba(0,17,20,0.55)]"><div class="h-20 max-w-[1360px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group focus:outline-none focus:ring-1 focus:ring-[#88BDBC] rounded-lg p-space-xs" data-path="home" href="#"><img alt="Campus Queue Manager Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UG5AGfbD7Xe8SdbEfnmB5iOsDLrVE_mFD1mjZF_GKF3lggJ5LamDe5ez3I5_rmqVz8K6_vraMCUAycPmjYx4kgifuvmsoFnojwAYWgDTdJ1O7ARsmy2lPY-weJZJDf7Dj1LwlGoZiszokSJ5kUsmHYLySHL6ROYG38kNHEtarKkYWMdJaEBNChrAPBcwzebTF7Gp67sVlCsqBrjHVXiWVx8Lkc50kqpEpzopFxDD_lUmxr2FKFCaxqg06d"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight group-hover:text-[#88BDBC] transition-colors">QueueFlow</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Campus Ops</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-[#88BDBC] text-[#112D32] font-semibold shadow-[0_0_20px_rgba(136,189,188,0.45)]"><a aria-current="page" class="px-space-md py-space-sm rounded-lg transition-all bg-[#88BDBC] text-[#112D32] font-semibold shadow-[0_0_20px_rgba(136,189,188,0.45)]" data-path="home" href="#">Home</a><a class="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-[#254E58] hover:text-on-surface transition-all" data-path="explore-services" href="#">Explore Services</a><a class="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-[#254E58] hover:text-on-surface transition-all" data-path="active-tokens" href="#">Active Tokens</a><a class="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-[#254E58] hover:text-on-surface transition-all" data-path="live-status" href="#">Live Status</a><a class="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-[#254E58] hover:text-on-surface transition-all" data-path="provider-portal" href="#">Provider Portal</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs bg-[#021f24] border border-[#88BDBC]/40 rounded-full"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#88BDBC] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#88BDBC]"></span></span><span class="font-label-sm text-label-sm text-[#88BDBC] uppercase tracking-wide">Queues Operational</span></div><button aria-label="Notifications" class="relative p-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-[#254E58] transition-colors focus:outline-none focus:ring-1 focus:ring-[#88BDBC]" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-[#6E6658] text-[#cae8ee] font-label-sm text-label-sm font-semibold rounded-full ring-2 ring-[#112D32]">2</span></button><div class="flex items-center gap-space-xs pl-space-xs"><button aria-expanded="false" aria-haspopup="true" class="flex items-center gap-space-xs p-space-xs rounded-full hover:bg-[#254E58] transition-colors focus:outline-none focus:ring-1 focus:ring-[#88BDBC]" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-[#88BDBC]/60 border border-[#4F4A41]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjjxNpEsuiOq54Npp4waoCJtejK7QRIL3Dhmu-WiGs40QbD0SYhlqZpFFQ-sTgIbswwBUH4u5gjla-n6Qb_jPcyuTTnTV0x4IeUdj0Dr9lQjjzqygjmC_IizZHB03FhTRZwihXqpj8-SD82iAS8QmZKp51PMDhBJD7YTIZlarPlz95T-0F_0poVrQd6d9FeGUeYIHHWEVJaE-QDeSOETuZewJVyVOqpUFanufUmTG9iclLdE_lBuL3QA"/><span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_drop_down</span></button></div></div></div></header><main class="flex-1 w-full pt-20 bg-[#112D32]"><div class="flex flex-col w-full">
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-[#88BDBC]/10 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute top-1/2 -right-32 w-[420px] h-[420px] bg-[#6E6658]/20 rounded-full blur-[160px] pointer-events-none"></div>
+<div class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-xl flex flex-col gap-space-xl relative z-10">
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-[#88BDBC] uppercase tracking-widest bg-[#254E58] border border-[#4F4A41] px-space-sm py-0.5 rounded-full">Telemetry Profile Matrix</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="h-2 w-2 rounded-full bg-[#88BDBC] inline-block"></span> Sync Status: Nominal
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Student Identity &amp; Queue Registry</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Configure SMS queue dispatches, analyze multi-department wait metrics, and manage campus presence sensors.</p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<div class="bg-[#254E58] border border-[#4F4A41] rounded-xl p-space-sm flex items-center gap-space-md shadow-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Current Term</span>
+<span class="font-ticket-code-sm text-ticket-code-sm text-[#88BDBC]">FA-2024-Q3</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-[#021f24] border border-[#4F4A41] flex items-center justify-center text-[#88BDBC]">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="relative rounded-2xl bg-[#254E58] border border-[#4F4A41] shadow-xl p-space-xl flex flex-col gap-space-lg overflow-hidden">
+<div class="absolute -right-8 -top-8 w-36 h-36 bg-[#88BDBC]/15 rounded-full blur-2xl"></div>
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-space-lg text-center sm:text-left">
+<div class="relative shrink-0">
+<img alt="Alex Chen Portrait" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover shadow-[0_0_24px_rgba(136,189,188,0.35)] border-2 border-[#6E6658]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjjxNpEsuiOq54Npp4waoCJtejK7QRIL3Dhmu-WiGs40QbD0SYhlqZpFFQ-sTgIbswwBUH4u5gjla-n6Qb_jPcyuTTnTV0x4IeUdj0Dr9lQjjzqygjmC_IizZHB03FhTRZwihXqpj8-SD82iAS8QmZKp51PMDhBJD7YTIZlarPlz95T-0F_0poVrQd6d9FeGUeYIHHWEVJaE-QDeSOETuZewJVyVOqpUFanufUmTG9iclLdE_lBuL3QA"/>
+<div class="absolute -bottom-2 -right-2 bg-[#021f24] border border-[#6E6658] text-[#88BDBC] p-1.5 rounded-xl shadow-md">
+<span class="material-symbols-outlined text-[18px] block">verified</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center justify-center sm:justify-start gap-space-xs mb-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight truncate">Alex Chen</span>
+</div>
+<div class="font-ticket-code-sm text-ticket-code-sm text-[#88BDBC] mb-1">#2024-CS-049</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-center sm:justify-start gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#88BDBC]">school</span>
+<span class="truncate">Computer Science &amp; Engineering</span>
+</div>
+<div class="mt-space-sm flex flex-wrap gap-space-xs justify-center sm:justify-start">
+<span class="px-space-sm py-0.5 rounded-full bg-[#021f24] border border-[#4F4A41] text-on-surface-variant font-label-sm text-label-sm">Class of 2026</span>
+<span class="px-space-sm py-0.5 rounded-full bg-[#88BDBC]/20 border border-[#88BDBC]/40 text-[#88BDBC] font-label-sm text-label-sm">Dean's List Priority</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-xs bg-[#021f24] border border-[#4F4A41] p-space-md rounded-xl text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Queues</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">24</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Avg Wait</span>
+<span class="font-headline-sm text-headline-sm text-[#88BDBC]">11m</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Reliability</span>
+<span class="font-headline-sm text-headline-sm text-[#cae8ee]">98.4%</span>
+</div>
+</div>
+<form class="flex flex-col gap-space-md" id="profile-form" onsubmit="event.preventDefault(); triggerSaveFeedback();">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="full-name">
+<span class="material-symbols-outlined text-[14px] text-[#88BDBC]">person</span> Full Legal Name
+                </label>
+<input class="h-12 px-space-md bg-[#021f24] border border-[#4F4A41] rounded-lg text-on-surface font-body-md focus:border-[#88BDBC] focus:bg-[#021f24]/90 focus:outline-none shadow-sm transition-all" id="full-name" type="text" value="Alex Chen"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="campus-email">
+<span class="material-symbols-outlined text-[14px] text-[#88BDBC]">mail</span> Campus Network Email
+                </label>
+<input class="h-12 px-space-md bg-[#021f24] border border-[#4F4A41] rounded-lg text-on-surface font-body-md focus:border-[#88BDBC] focus:bg-[#021f24]/90 focus:outline-none shadow-sm transition-all" id="campus-email" type="email" value="alex.chen@campus.edu"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="phone-sms">
+<span class="material-symbols-outlined text-[14px] text-[#88BDBC]">sms</span> Phone (For Instant SMS Dispatch)
+                  </label>
+<span class="font-label-sm text-label-sm text-[#88BDBC]">SMS Active</span>
+</div>
+<input class="h-12 px-space-md bg-[#021f24] border border-[#4F4A41] rounded-lg text-on-surface font-ticket-code-sm text-ticket-code-sm focus:border-[#88BDBC] focus:bg-[#021f24]/90 focus:outline-none shadow-sm transition-all" id="phone-sms" type="tel" value="+1 (555) 382-9014"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5" for="alt-contact">
+<span class="material-symbols-outlined text-[14px] text-[#88BDBC]">contact_emergency</span> Alternate / Emergency Dispatch Contact
+                </label>
+<input class="h-12 px-space-md bg-[#021f24] border border-[#4F4A41] rounded-lg text-on-surface font-body-md focus:border-[#88BDBC] focus:bg-[#021f24]/90 focus:outline-none shadow-sm transition-all" id="alt-contact" type="text" value="M. Chen (+1 555-901-2244) - Guardian"/>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-xs">
+<button class="h-12 w-full rounded-xl bg-[#88BDBC] text-[#112D32] font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-space-sm hover:shadow-[0_0_24px_rgba(136,189,188,0.6)] transition-all cursor-pointer" id="save-btn" type="submit">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Save Profile Changes</span>
+</button>
+<div class="hidden text-center font-label-sm text-label-sm text-[#88BDBC] py-1" id="save-banner">
+                  ✓ Profile and dispatch relays updated across campus cluster nodes.
+                </div>
+</div>
+</form>
+</div>
+<div class="rounded-2xl bg-[#254E58] border border-[#4F4A41] shadow-xl p-space-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-[#021f24] border border-[#4F4A41] text-[#88BDBC] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Dispatch Controls</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time automation telemetry</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-[#88BDBC] bg-[#021f24] border border-[#6E6658] px-space-sm py-1 rounded-full">4 Active</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<label class="flex items-start justify-between gap-space-md cursor-pointer group p-space-sm rounded-xl hover:bg-[#021f24]/60 transition-colors">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-[#88BDBC] transition-colors">SMS Dispatch Alerts</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Instant text trigger when you reach ≤ 3 people ahead</span>
+</div>
+<input checked="" class="mt-1 h-5 w-5 rounded bg-[#021f24] border border-[#6E6658] text-[#88BDBC] accent-[#88BDBC] cursor-pointer shrink-0" type="checkbox"/>
+</label>
+<label class="flex items-start justify-between gap-space-md cursor-pointer group p-space-sm rounded-xl hover:bg-[#021f24]/60 transition-colors">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-[#88BDBC] transition-colors">Email Confirmations</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Digital clearance receipts, token barcodes, and PDF slips</span>
+</div>
+<input checked="" class="mt-1 h-5 w-5 rounded bg-[#021f24] border border-[#6E6658] text-[#88BDBC] accent-[#88BDBC] cursor-pointer shrink-0" type="checkbox"/>
+</label>
+<label class="flex items-start justify-between gap-space-md cursor-pointer group p-space-sm rounded-xl hover:bg-[#021f24]/60 transition-colors">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-[#88BDBC] transition-colors">Push Sound Chimes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">High-pitch browser ping upon counter operator call</span>
+</div>
+<input checked="" class="mt-1 h-5 w-5 rounded bg-[#021f24] border border-[#6E6658] text-[#88BDBC] accent-[#88BDBC] cursor-pointer shrink-0" type="checkbox"/>
+</label>
+<label class="flex items-start justify-between gap-space-md cursor-pointer group p-space-sm rounded-xl hover:bg-[#021f24]/60 transition-colors">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface group-hover:text-[#88BDBC] transition-colors">Geo-Proximity Auto-Check-in</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Campus Beacon ping confirms physical presence in lobby</span>
+</div>
+<input checked="" class="mt-1 h-5 w-5 rounded bg-[#021f24] border border-[#6E6658] text-[#88BDBC] accent-[#88BDBC] cursor-pointer shrink-0" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="rounded-2xl bg-[#254E58] border border-[#4F4A41] shadow-xl p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-[#021f24] border border-[#4F4A41] text-[#88BDBC] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">notifications_active</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Notification Feed</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live telemetry dispatches &amp; queue broadcasts</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-[#88BDBC] font-label-sm text-label-sm flex items-center gap-1 self-start sm:self-auto transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span> Mark read
+              </button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="p-space-md rounded-xl bg-[#021f24] border border-[#4F4A41] flex items-start gap-space-md relative overflow-hidden group shadow-md hover:border-[#6E6658] transition-all">
+<div class="w-1.5 absolute top-0 bottom-0 left-0 bg-[#6E6658]"></div>
+<div class="h-9 w-9 rounded-lg bg-[#254E58] border border-[#4F4A41] shrink-0 flex items-center justify-center text-[#88BDBC]">
+<span class="material-symbols-outlined text-[20px]">directions_walk</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm text-[#88BDBC] font-semibold uppercase">Immediate Call Protocol</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium mt-0.5">
+                    Token <span class="font-ticket-code-sm text-ticket-code-sm text-[#88BDBC]">#A-42</span> is now 2 people away!
+                  </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Please proceed to Admin Building B, Counter 03 immediately to preserve priority placement.
+                  </p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-[#021f24] border border-[#4F4A41] flex items-start gap-space-md relative overflow-hidden group hover:border-[#6E6658] transition-all">
+<div class="w-1.5 absolute top-0 bottom-0 left-0 bg-[#88BDBC]"></div>
+<div class="h-9 w-9 rounded-lg bg-[#254E58] border border-[#4F4A41] shrink-0 flex items-center justify-center text-[#88BDBC]">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm text-[#88BDBC] uppercase">Service Resolved</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium mt-0.5">
+                    Your Bonafide Certificate request was approved and digitally sealed.
+                  </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Reference #B-19 closed by Registrar Desk 02. Download available via portal storage.
+                  </p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-[#021f24] border border-[#4F4A41] flex items-start gap-space-md relative overflow-hidden group hover:border-[#6E6658] transition-all">
+<div class="w-1.5 absolute top-0 bottom-0 left-0 bg-[#6E6658]"></div>
+<div class="h-9 w-9 rounded-lg bg-[#254E58] border border-[#4F4A41] shrink-0 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-sm text-label-sm text-[#cae8ee] uppercase">Facility Queue State</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 days ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium mt-0.5">
+                    Laser Cutter Lab Queue has opened for afternoon reservation cycles.
+                  </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Estimated availability slot: 14:00 - 17:30 in MakerSpace North Hub.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-2xl bg-[#254E58] border border-[#4F4A41] shadow-xl p-space-xl flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-[#021f24] border border-[#4F4A41] text-[#88BDBC] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">history_edu</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Queue Ledger History</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Historical ticket tokens and operator resolution logs</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-[#021f24] border border-[#4F4A41] p-1 rounded-xl">
+<button class="px-space-md py-1.5 rounded-lg font-label-sm text-label-sm bg-[#88BDBC] text-[#112D32] font-semibold transition-all" id="btn-filter-all" onclick="filterLedger('all')" type="button">All</button>
+<button class="px-space-md py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="btn-filter-completed" onclick="filterLedger('completed')" type="button">Completed</button>
+<button class="px-space-md py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="btn-filter-cancelled" onclick="filterLedger('cancelled')" type="button">Cancelled</button>
+</div>
+</div>
+<div class="overflow-x-auto rounded-xl border border-[#4F4A41]">
+<table class="w-full text-left min-w-[560px]">
+<thead>
+<tr class="bg-[#021f24] border-b border-[#4F4A41] font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<th class="py-space-sm px-space-md">Token ID</th>
+<th class="py-space-sm px-space-md">Service Name</th>
+<th class="py-space-sm px-space-md">Timestamp</th>
+<th class="py-space-sm px-space-md">Wait Delta</th>
+<th class="py-space-sm px-space-md text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#4F4A41]/50 text-body-sm bg-[#021f24]/50">
+<tr class="queue-row hover:bg-[#021f24] transition-colors" data-status="completed">
+<td class="py-space-md px-space-md">
+<span class="font-ticket-code-sm text-ticket-code-sm text-[#88BDBC]">#B-19</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Bonafide Certificate</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Registrar Office Desk 02</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant">
+                      Yesterday, 11:30 AM
+                    </td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm text-[#88BDBC] bg-[#254E58] border border-[#4F4A41] px-2 py-0.5 rounded-md">8m served</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-[#88BDBC] bg-[#254E58] border border-[#4F4A41] px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Completed ✓
+                      </span>
+</td>
+</tr>
+<tr class="queue-row bg-[#021f24]/80 hover:bg-[#021f24] transition-colors" data-status="completed">
+<td class="py-space-md px-space-md">
+<span class="font-ticket-code-sm text-ticket-code-sm text-[#88BDBC]">#L-04</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">3D Printer Lab Booking</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Engineering Annex Lab 01</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant">
+                      Oct 14, 2024
+                    </td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm text-[#88BDBC] bg-[#254E58] border border-[#4F4A41] px-2 py-0.5 rounded-md">15m served</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-[#88BDBC] bg-[#254E58] border border-[#4F4A41] px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Completed ✓
+                      </span>
+</td>
+</tr>
+<tr class="queue-row hover:bg-[#021f24] transition-colors" data-status="cancelled">
+<td class="py-space-md px-space-md">
+<span class="font-ticket-code-sm text-ticket-code-sm text-on-surface-variant">#R-88</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Registrar Fee Receipt Clearance</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bursar Central Terminal</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant">
+                      Oct 02, 2024
+                    </td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-[#254E58] border border-[#4F4A41] px-2 py-0.5 rounded-md">Voided</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-[#cae8ee] bg-[#4F4A41] border border-[#6E6658] px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">cancel</span> Cancelled by User
+                      </span>
+</td>
+</tr>
+<tr class="queue-row bg-[#021f24]/80 hover:bg-[#021f24] transition-colors" data-status="completed">
+<td class="py-space-md px-space-md">
+<span class="font-ticket-code-sm text-ticket-code-sm text-[#88BDBC]">#H-12</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Hostel Room Clearance</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Student Housing Counter 4</span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-on-surface-variant">
+                      Sep 20, 2024
+                    </td>
+<td class="py-space-md px-space-md">
+<span class="font-label-sm text-label-sm text-[#88BDBC] bg-[#254E58] border border-[#4F4A41] px-2 py-0.5 rounded-md">22m served</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-[#88BDBC] bg-[#254E58] border border-[#4F4A41] px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Completed ✓
+                      </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 4 of 24 logged queue requests</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1 bg-[#021f24] hover:bg-[#254E58] border border-[#4F4A41] text-on-surface font-label-sm text-label-sm rounded-lg transition-colors" type="button">Export Telemetry Log</button>
+<button class="px-space-md py-1 bg-[#021f24] hover:bg-[#254E58] border border-[#4F4A41] text-on-surface font-label-sm text-label-sm rounded-lg transition-colors" type="button">View All</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="rounded-2xl bg-[#254E58] border border-[#4F4A41] shadow-xl p-space-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Time Saved This Month</span>
+<span class="font-display-lg text-display-lg text-[#88BDBC] leading-none mt-1">3.4<span class="text-headline-md">hrs</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">vs. physical queue standing</span>
+</div>
+<div class="w-14 h-14 rounded-2xl bg-[#021f24] border border-[#4F4A41] text-[#88BDBC] flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">hourglass_bottom</span>
+</div>
+</div>
+<div class="rounded-2xl bg-[#254E58] border border-[#4F4A41] shadow-xl p-space-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Queue Reliability Index</span>
+<span class="font-display-lg text-display-lg text-[#88BDBC] leading-none mt-1">100<span class="text-headline-md">%</span></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Zero missed calls / no-shows</span>
+</div>
+<div class="w-14 h-14 rounded-2xl bg-[#021f24] border border-[#4F4A41] text-[#88BDBC] flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">military_tech</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function triggerSaveFeedback() {
+      const banner = document.getElementById('save-banner');
+      const btn = document.getElementById('save-btn');
+      
+      btn.classList.add('scale-[0.98]');
+      setTimeout(() => btn.classList.remove('scale-[0.98]'), 150);
+
+      banner.classList.remove('hidden');
+      setTimeout(() => {
+        banner.classList.add('hidden');
+      }, 4000);
+    }
+
+    function filterLedger(filterType) {
+      const rows = document.querySelectorAll('.queue-row');
+      const btnAll = document.getElementById('btn-filter-all');
+      const btnComp = document.getElementById('btn-filter-completed');
+      const btnCanc = document.getElementById('btn-filter-cancelled');
+
+      [btnAll, btnComp, btnCanc].forEach(b => {
+        b.className = 'px-space-md py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all';
+      });
+
+      if (filterType === 'all') {
+        btnAll.className = 'px-space-md py-1.5 rounded-lg font-label-sm text-label-sm bg-[#88BDBC] text-[#112D32] font-semibold transition-all';
+      } else if (filterType === 'completed') {
+        btnComp.className = 'px-space-md py-1.5 rounded-lg font-label-sm text-label-sm bg-[#88BDBC] text-[#112D32] font-semibold transition-all';
+      } else if (filterType === 'cancelled') {
+        btnCanc.className = 'px-space-md py-1.5 rounded-lg font-label-sm text-label-sm bg-[#88BDBC] text-[#112D32] font-semibold transition-all';
+      }
+
+      rows.forEach(row => {
+        const rowStatus = row.getAttribute('data-status');
+        if (filterType === 'all' || rowStatus === filterType) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-[#112D32] border-t border-[#254E58] mt-auto"><div class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg text-center md:text-left"><div class="flex flex-col gap-space-xs"><div class="flex items-center justify-center md:justify-start gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Campus Queue Command</span><span class="px-space-sm py-space-xs rounded-full bg-[#254E58] text-[#88BDBC] font-label-sm text-label-sm border border-[#88BDBC]/30">v2.4 Live Node</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Synchronized decentralized queue telemetry for Student Affairs, Financial Aid, Health Center, and Academic Advising.</p></div><div class="flex flex-wrap items-center justify-center gap-space-lg"><a class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant hover:text-[#88BDBC] transition-colors" data-path="live-status" href="#"><span class="material-symbols-outlined text-[16px]">pulse_alert</span><span>System Telemetry</span></a><a class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant hover:text-[#88BDBC] transition-colors" data-path="helpdesk" href="#"><span class="material-symbols-outlined text-[16px]">contact_support</span><span>Campus Helpdesk</span></a><a class="flex items-center gap-space-xs font-label-md text-label-md text-[#88BDBC] hover:text-primary-fixed transition-colors" data-path="emergency-dispatch" href="#"><span class="material-symbols-outlined text-[16px]">bolt</span><span>Emergency Queue Dispatch</span></a></div></div><div class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-md border-t border-[#254E58]/80 flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Campus Administration Systems. All rights reserved.</p><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-[#88BDBC]"></span>Encrypted Hub</span><span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-[#88BDBC]"></span>WebSocket Synced</span></div></div></footer></body></html>

@@ -1,0 +1,75 @@
+.step-card {
+  position: relative;
+  min-height: 184px;
+  padding: 19px 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: linear-gradient(145deg, #ffffff, #f5f9ff);
+}
+.step-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.step-icon {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 11px;
+  color: var(--primary);
+  background: rgba(59, 130, 246, 0.08);
+}
+.step-card:nth-child(3) .step-icon {
+  color: var(--warm);
+  background: rgba(217, 119, 6, 0.09);
+  border-color: rgba(217, 119, 6, 0.18);
+}
+.step-number {
+  color: rgba(59, 130, 246, 0.55);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+.step-card h3 {
+  margin: 17px 0 6px;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+.step-card p {
+  max-width: 290px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.75;
+}
+.step-line {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  left: 20px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  opacity: 0.36;
+}
+.services-preview {
+  padding-top: 82px;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.text-link:hover {
+  color: var(--primary-bright);
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}

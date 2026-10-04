@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Campus Queue Manager</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#690005","tertiary-fixed-dim":"#d0c5b4","inverse-primary":"#326766","on-primary-fixed":"#002020","on-secondary-container":"#96bfcb","surface":"#00161a","surface-tint":"#9bd0cf","on-tertiary-fixed-variant":"#4d4639","secondary":"#a4cdd9","on-error-container":"#ffdad6","on-secondary-fixed":"#001f26","primary":"#88bdbc","surface-dim":"#00161a","primary-container":"#88bdbc","primary-fixed":"#b6edeb","on-surface":"#cae8ee","on-secondary":"#06363f","on-primary-fixed-variant":"#164e4e","surface-container-lowest":"#001114","on-secondary-fixed-variant":"#234c56","tertiary-fixed":"#ece1d0","on-background":"#cae8ee","secondary-fixed-dim":"#a4cdd9","surface-container-highest":"#1e393e","surface-container-high":"#122e33","outline":"#8a9292","on-primary":"#003737","surface-container-low":"#021f24","on-tertiary":"#363024","tertiary-container":"#6E6658","background":"#00161a","outline-variant":"#404848","inverse-surface":"#cae8ee","primary-fixed-dim":"#9bd0cf","inverse-on-surface":"#193439","on-primary-container":"#144d4d","error-container":"#93000a","on-surface-variant":"#bfc8c7","on-tertiary-container":"#ece1d0","on-tertiary-fixed":"#201b10","surface-container":"#062328","secondary-container":"#254e58","error":"#ffb4ab","secondary-fixed":"#c0e9f6","surface-variant":"#1e393e","surface-bright":"#223d42","tertiary":"#d8cdbc","midnight":"#112D32","warm-dark":"#4F4A41","warm-muted":"#6E6658"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xs":"0.25rem","space-sm":"0.5rem",margin:"2.5rem",gutter:"1.5rem","gutter-mobile":"1rem","space-md":"1rem","margin-mobile":"1.25rem","space-lg":"1.5rem","space-xl":"2.5rem"},fontFamily:{"ticket-code-sm":["JetBrains Mono"],"label-sm":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"ticket-code":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"label-md":["JetBrains Mono"],"body-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"]},fontSize:{"ticket-code-sm":["20px",{lineHeight:"26px",letterSpacing:"0.04em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"500"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"ticket-code":["44px",{lineHeight:"48px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"500"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"display-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],"display-lg-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary selection:text-on-primary"><header class="fixed top-0 left-0 right-0 z-50 bg-[#112D32]/90 backdrop-blur-md border-b border-[#88BDBC]/20 shadow-[0_8px_32px_rgba(0,22,26,0.55)]"><div class="h-20 max-w-[1360px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group focus:outline-none focus:ring-1 focus:ring-primary rounded-lg p-space-xs" data-path="home" href="#"><img alt="Campus Queue Manager Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UG5AGfbD7Xe8SdbEfnmB5iOsDLrVE_mFD1mjZF_GKF3lggJ5LamDe5ez3I5_rmqVz8K6_vraMCUAycPmjYx4kgifuvmsoFnojwAYWgDTdJ1O7ARsmy2lPY-weJZJDf7Dj1LwlGoZiszokSJ5kUsmHYLySHL6ROYG38kNHEtarKkYWMdJaEBNChrAPBcwzebTF7Gp67sVlCsqBrjHVXiWVx8Lkc50kqpEpzopFxDD_lUmxr2FKFCaxqg06d"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight group-hover:text-primary transition-colors">QueueFlow</span><span class="font-label-sm text-label-sm text-[#88BDBC]/80 uppercase tracking-wider">Campus Ops</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary text-on-primary-container font-semibold shadow-[0_0_20px_rgba(136,189,188,0.4)]"><a aria-current="page" class="px-space-md py-space-sm rounded-lg transition-all bg-[#88BDBC] text-[#144d4d] font-semibold shadow-[0_0_20px_rgba(136,189,188,0.45)]" data-path="home" href="#">Home</a><a class="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="explore-services" href="#">Explore Services</a><a class="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="active-tokens" href="#">Active Tokens</a><a class="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="live-status" href="#">Live Status</a><a class="px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="provider-portal" href="#">Provider Portal</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low border border-[#88BDBC]/30 rounded-full"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-sm text-label-sm text-primary uppercase tracking-wide">Queues Operational</span></div><button aria-label="Notifications" class="relative p-space-sm rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-1 focus:ring-primary" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-[#6E6658] text-white font-label-sm text-label-sm font-semibold rounded-full ring-2 ring-surface">2</span></button><div class="flex items-center gap-space-xs pl-space-xs"><button aria-expanded="false" aria-haspopup="true" class="flex items-center gap-space-xs p-space-xs rounded-full hover:bg-surface-container-high transition-colors focus:outline-none focus:ring-1 focus:ring-primary" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjjxNpEsuiOq54Npp4waoCJtejK7QRIL3Dhmu-WiGs40QbD0SYhlqZpFFQ-sTgIbswwBUH4u5gjla-n6Qb_jPcyuTTnTV0x4IeUdj0Dr9lQjjzqygjmC_IizZHB03FhTRZwihXqpj8-SD82iAS8QmZKp51PMDhBJD7YTIZlarPlz95T-0F_0poVrQd6d9FeGUeYIHHWEVJaE-QDeSOETuZewJVyVOqpUFanufUmTG9iclLdE_lBuL3QA"/><span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_drop_down</span></button></div></div></div></header><main class="flex-1 w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Atmospheric Glow Layer -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[480px] bg-[#88BDBC]/15 rounded-full blur-[130px] pointer-events-none"></div>
+<div class="absolute top-96 -left-20 w-[420px] h-[360px] bg-[#254E58]/25 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute top-[680px] -right-24 w-[380px] h-[320px] bg-[#112D32]/50 rounded-full blur-[90px] pointer-events-none"></div>
+<!-- HERO SECTION -->
+<section class="relative max-w-[1360px] mx-auto px-margin-mobile lg:px-margin pt-8 pb-16 lg:pt-14 lg:pb-24 flex flex-col items-center text-center">
+<!-- Node Status Capsule -->
+<div class="inline-flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-[#112D32] border border-[#254E58] shadow-sm mb-space-lg">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-[#88BDBC] uppercase tracking-widest">Campus Grid Active • Zero Congestion Protocol</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">| Latency 24ms</span>
+</div>
+<!-- Main Headline with Luminescence -->
+<h1 class="font-display-lg text-display-lg max-w-4xl text-on-surface font-bold tracking-tight drop-shadow-[0_0_24px_rgba(136,189,188,0.25)]">
+        Skip the Line.<br class="hidden sm:inline"/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#88BDBC] via-primary-fixed to-secondary">Not the Service.</span>
+</h1>
+<!-- Subtitle -->
+<p class="mt-space-md font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        The next-generation intelligent queue and token dispatch network for university certificates, lab equipment, and student registrar desks.
+      </p>
+<!-- Action Buttons -->
+<div class="mt-space-xl flex flex-wrap items-center justify-center gap-space-md w-full max-w-md">
+<a class="flex-1 min-w-[200px] inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded-xl bg-[#88BDBC] text-[#002020] font-headline-sm text-body-md font-semibold shadow-[0_0_24px_rgba(136,189,188,0.35)] hover:shadow-[0_0_32px_rgba(136,189,188,0.55)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" data-path="explore-services" href="#">
+<span>Get Started as Student</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="flex-1 min-w-[180px] inline-flex items-center justify-center gap-space-xs px-space-lg py-3.5 rounded-xl bg-[#254E58] text-[#cae8ee] border border-[#88BDBC]/30 font-headline-sm text-body-md font-medium hover:bg-[#112D32] transition-all shadow-sm" data-path="provider-portal" href="#">
+<span class="material-symbols-outlined text-[18px] text-[#88BDBC]">admin_panel_settings</span>
+<span>Provider Portal</span>
+</a>
+</div>
+<!-- Live Stats Pill Strip -->
+<div class="mt-space-xl inline-flex flex-wrap items-center justify-center gap-y-space-xs gap-x-space-md px-space-lg py-space-sm rounded-full bg-[#112D32]/80 border border-[#254E58] shadow-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">hub</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">12 Campus Hubs Active</span>
+</div>
+<span class="text-outline-variant hidden md:inline">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">hourglass_top</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">4.2 min Avg Wait</span>
+</div>
+<span class="text-outline-variant hidden md:inline">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-[#d8cdbc]">verified</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">98.7% On-Time Dispatches</span>
+</div>
+</div>
+<!-- HERO PREVIEW CARD -->
+<div class="mt-space-xl w-full max-w-4xl relative">
+<div class="absolute -inset-1 bg-gradient-to-r from-[#254E58] via-[#112D32] to-[#88BDBC]/30 rounded-3xl blur-md opacity-40"></div>
+<div class="relative rounded-2xl bg-[#112D32] border border-[#254E58] p-space-lg md:p-space-xl shadow-2xl text-left">
+<!-- Mock Token Card Content -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-lg pb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded-full bg-[#254E58] text-[#cae8ee] border border-[#88BDBC]/30 font-label-sm text-label-sm uppercase tracking-wider">Active Token Live Feed</span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                  Synced with North Tower Hub
+                </span>
+</div>
+<div class="flex items-baseline gap-space-md mt-space-xs">
+<span class="font-ticket-code text-ticket-code text-[#88BDBC] tracking-wider">#T-402</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Academic Certificates</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Central Registrar Services • Counter Bay 04 • Student ID: ST-88910</p>
+</div>
+<!-- Radar Beacon & Countdown -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest border border-[#254E58]/50 p-space-md rounded-xl">
+<div class="relative w-14 h-14 flex items-center justify-center">
+<span class="absolute w-14 h-14 rounded-full bg-primary/20 animate-ping"></span>
+<span class="absolute w-10 h-10 rounded-full bg-primary/30 animate-pulse"></span>
+<div class="relative w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]">cell_tower</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Estimated Call</span>
+<span class="font-ticket-code-sm text-ticket-code-sm text-secondary font-bold" id="heroCountdown">03m : 42s</span>
+<span class="font-label-sm text-label-sm text-[#88BDBC]">Next in batch</span>
+</div>
+</div>
+</div>
+<!-- Segmented Progression Line -->
+<div class="pt-space-md flex flex-col gap-space-sm bg-surface-container-low border border-[#254E58]/40 p-space-md rounded-xl">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[14px]">check_circle</span> Checked In</span>
+<span class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[14px]">check_circle</span> Document Verification</span>
+<span class="flex items-center gap-1 text-[#88BDBC] font-semibold"><span class="material-symbols-outlined text-[14px] animate-spin">sync</span> Dispatch Call (Current)</span>
+<span class="text-on-surface-variant/50">Collection Desk</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden flex">
+<div class="bg-primary w-2/3 h-full rounded-full relative">
+<span class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-secondary-fixed rounded-full shadow-[0_0_10px_#88BDBC]"></span>
+</div>
+</div>
+<div class="flex justify-between items-center pt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span>Position: <strong class="text-on-surface">2nd Ahead of you</strong></span>
+<span>Average counter handling: <strong class="text-on-surface">1.8 min</strong></span>
+</div>
+</div>
+<!-- Bottom Telemetry Badges -->
+<div class="mt-space-md flex flex-wrap items-center justify-between gap-space-sm pt-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-space-sm py-1 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">pin_drop</span> Registrar West Wing
+              </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-space-sm py-1 rounded-full bg-[#4F4A41]/40 border border-[#6E6658]/40 text-[#d8cdbc]">
+<span class="material-symbols-outlined text-[14px] text-[#88BDBC]">notifications_active</span> SMS Alerts Enabled
+              </span>
+</div>
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed flex items-center gap-1 font-semibold transition-colors" data-path="active-tokens" href="#">
+<span>View Full Ticket Details</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: HOW IT WORKS -->
+<section class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Autonomous Queuing Engine</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">How QueueFlow Works</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Say goodbye to crowded halls. From service selection to verified issuance, your mobile device handles the wait.
+        </p>
+</div>
+<!-- 3 Step Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Step 1 -->
+<div class="group relative rounded-2xl bg-[#112D32] border border-[#254E58] p-space-lg hover:bg-[#122e33] transition-all duration-300 shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-[#88BDBC] text-[#002020] flex items-center justify-center shadow-[0_0_16px_rgba(136,189,188,0.35)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">manage_search</span>
+</div>
+<span class="font-ticket-code-sm text-ticket-code-sm text-primary opacity-60">01</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Select Service</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Choose your required desk, inspect live estimated wait windows, and evaluate technician availability before you step onto the quad.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>Predictive AI Queue Time Models</span>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group relative rounded-2xl bg-[#112D32] border border-[#254E58] p-space-lg hover:bg-[#122e33] transition-all duration-300 shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-[#254E58] text-[#88BDBC] border border-[#88BDBC]/30 flex items-center justify-center shadow-[0_0_16px_rgba(37,78,88,0.5)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">confirmation_number</span>
+</div>
+<span class="font-ticket-code-sm text-ticket-code-sm text-secondary opacity-60">02</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Get Instant Token</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Receive an encrypted dynamic QR token with zero registration friction. Pin live position tracking directly onto your mobile lockscreen.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">qr_code_2</span>
+<span>Dynamic Anti-Fraud Pass</span>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group relative rounded-2xl bg-[#112D32] border border-[#254E58] p-space-lg hover:bg-[#122e33] transition-all duration-300 shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-[#4F4A41] text-[#d8cdbc] border border-[#6E6658] flex items-center justify-center shadow-[0_0_16px_rgba(110,102,88,0.4)] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[24px]">radar</span>
+</div>
+<span class="font-ticket-code-sm text-ticket-code-sm text-tertiary opacity-60">03</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Track &amp; Dispatch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Continuous proximity telemetry rings you when it’s 2 slots away. Walk to the counter just in time for personalized assistance.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">near_me</span>
+<span>Proximity Haptic Notifications</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: POPULAR SERVICE CATEGORIES -->
+<section class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Campus Ecosystem</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">High-Demand Service Hubs</h2>
+</div>
+<a class="font-headline-sm text-body-md text-primary hover:text-primary-fixed flex items-center gap-1 font-semibold transition-colors" data-path="explore-services" href="#">
+<span>Explore All 24 Services</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Service Categories Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Category 1: Academic Certificates -->
+<div class="rounded-2xl bg-[#112D32] border border-[#254E58] p-space-lg flex flex-col justify-between hover:bg-[#122e33] transition-all duration-300 shadow-md">
+<div class="flex flex-col">
+<div class="relative w-full h-36 rounded-xl overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" data-alt="University registrar administrative chamber with modern teal glowing digital terminals and students requesting academic transcripts in a calm moody ambient hall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOV24OadzxHBmrxuVpaDcutz4kyB2CimzS78kkM4Rgh5_8ImWKEgDxdSqbqZMZ3R5n-ZRutpwXZ4q478K2DO47EbrIZ5zh-tCEV7qwoKUY9cLX4tRHxdyc2d11RxIubQWeROEbDasqC-of-a-kcENe9whDgVMmdPBSxilRnuyFpSolNEsqk4WImO2Jb80UBjlAh7K_wp284phIck0Qv0MZu-cpA_7oGIYMTxyfl2MZL3uHULMcZfHxuA"/>
+<span class="absolute top-2 right-2 px-space-sm py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm border border-primary/20">6 waiting</span>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">school</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Registrar Office</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Academic Certificates</h4>
+<p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+              Degree verifications, certified transcripts, diplomas, and official dean letters.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Est. wait</span>
+<span class="font-ticket-code-sm text-ticket-code-sm text-primary">4 min</span>
+</div>
+<a class="px-space-md py-space-xs rounded-lg bg-[#254E58] hover:bg-[#88BDBC] hover:text-[#002020] text-on-surface font-label-md text-label-md transition-colors" data-path="explore-services" href="#">Queue Now</a>
+</div>
+</div>
+<!-- Category 2: Hardware & Maker Lab -->
+<div class="rounded-2xl bg-[#112D32] border border-[#254E58] p-space-lg flex flex-col justify-between hover:bg-[#122e33] transition-all duration-300 shadow-md">
+<div class="flex flex-col">
+<div class="relative w-full h-36 rounded-xl overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" data-alt="High-tech university hardware maker laboratory with illuminated 3D printers, laser cutters, electronic benches with green teal subtle ambient neon lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGSuuqCYgdfqCvPUe-VwacgYky15trjnATBpLpAWU5rn-5pPOfXJ2z_jYkZG_DzZwymkXCkZU9bpPxKYcM4fGB5JIQtbP6_WUWot2bDs7zaXpXLONfDdsKXyyj9gS0KgOjCR6ewngtAd_TjCRwuIuy8xOx7nBOXuszAlOpze5x8n5xQuVq5524KhFRKItJARP1pnwGJ-iNISh6lIjUC9GyiiOcIJCQRwYFUuD8hWpVhBuzewbhp5Q8Mg"/>
+<span class="absolute top-2 right-2 px-space-sm py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-secondary font-label-sm text-label-sm border border-secondary/20">2 waiting</span>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">precision_manufacturing</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Engineering Bay</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Hardware &amp; Maker Lab</h4>
+<p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+              Oscilloscopes, CNC router clearance, rapid prototyping tools, and VR sandbox gear.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Est. wait</span>
+<span class="font-ticket-code-sm text-ticket-code-sm text-secondary">2 min</span>
+</div>
+<a class="px-space-md py-space-xs rounded-lg bg-[#254E58] hover:bg-[#88BDBC] hover:text-[#002020] text-on-surface font-label-md text-label-md transition-colors" data-path="explore-services" href="#">Queue Now</a>
+</div>
+</div>
+<!-- Category 3: Financial Aid & Registrar Desk -->
+<div class="rounded-2xl bg-[#112D32] border border-[#254E58] p-space-lg flex flex-col justify-between hover:bg-[#122e33] transition-all duration-300 shadow-md">
+<div class="flex flex-col">
+<div class="relative w-full h-36 rounded-xl overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" data-alt="University financial advisory lounge with glass partitions, soft warm lighting, dark moss slate backdrop, and private consultation booths" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc20BU1U_l33BtUr_fuVoncX5qGVONl2teJQCgXrEJ_uHo7LgKXt279selsQIxhRyyvOeGU94jmouhu7VcydZcMNFbZo6fo23Jdg61hlpGRs9l-ecwWk7ZiEdfPxY3DKieJbK8rEWmUxCqXY-NHoubL8ErJLaCQtHohy_joj1WnpODQtO4qcvkHGNcwgd0dq0w6qtNPE-YlHmQ4huB5h1Qzk5t4kBoCdqUgdv8Ureyt8KnGmabQDosAg"/>
+<span class="absolute top-2 right-2 px-space-sm py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-[#d8cdbc] font-label-sm text-label-sm border border-[#6E6658]/40">8 waiting</span>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-[18px] text-[#d8cdbc]">account_balance</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bursar Division</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Financial Aid &amp; Bursar</h4>
+<p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+              FAFSA counselor consultations, payment schedules, scholarship vouchers, and grants.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Est. wait</span>
+<span class="font-ticket-code-sm text-ticket-code-sm text-[#d8cdbc]">7 min</span>
+</div>
+<a class="px-space-md py-space-xs rounded-lg bg-[#254E58] hover:bg-[#88BDBC] hover:text-[#002020] text-on-surface font-label-md text-label-md transition-colors" data-path="explore-services" href="#">Queue Now</a>
+</div>
+</div>
+<!-- Category 4: Campus Health Center -->
+<div class="rounded-2xl bg-[#112D32] border border-[#254E58] p-space-lg flex flex-col justify-between hover:bg-[#122e33] transition-all duration-300 shadow-md">
+<div class="flex flex-col">
+<div class="relative w-full h-36 rounded-xl overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" data-alt="Modern serene university student wellness clinic with clean architectural elements, calming teal moss interior accents, and private intake stations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWOCm8phLshCsWu3serm-MTzRmaA3obFq1jRWeg3PebKQOoWIYBe0mMAQOGyW07lF9yRGSrSp1ycTsZ_FyQAwffF_e3wDoyzmF3aKbjg6Jq5LIGCxhoiqkmphPC5Fdce4XAEAOkzq8owt5DTWpAKyPWpH-QeVqBBWUuuD58VRnXcXaC2Lxm6-HH3zdn1nkbKlwCuEuuZthmHmvb7EcmAIPuzJHKP5gLYxmGqiLMIOxoOq13T4p1LIy3w"/>
+<span class="absolute top-2 right-2 px-space-sm py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-primary font-label-sm text-label-sm border border-primary/20">3 waiting</span>
+</div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">healing</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wellness Pavillion</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Campus Health Clinic</h4>
+<p class="mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+              Triage consultation, immunization updates, prescription refills, and rapid walk-ins.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Est. wait</span>
+<span class="font-ticket-code-sm text-ticket-code-sm text-primary">3 min</span>
+</div>
+<a class="px-space-md py-space-xs rounded-lg bg-[#254E58] hover:bg-[#88BDBC] hover:text-[#002020] text-on-surface font-label-md text-label-md transition-colors" data-path="explore-services" href="#">Queue Now</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: LIVE METRICS VISUALIZATION -->
+<section class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-xl">
+<div class="rounded-3xl bg-[#112D32] border border-[#254E58] p-space-lg md:p-space-xl shadow-xl flex flex-col lg:flex-row items-center gap-space-xl">
+<div class="flex-1 flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Algorithmic Load Balancing</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">Campus Congestion Flattened by 74%</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            By shifting from static physical lineups to our decentralized dynamic token registry, academic centers reclaim over 1,400 daily student study hours.
+          </p>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-md pt-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-high border border-[#254E58]/40">
+<div class="font-ticket-code text-ticket-code-sm text-[#88BDBC] font-bold">14,892</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Tokens Processed This Week</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high border border-[#254E58]/40">
+<div class="font-ticket-code text-ticket-code-sm text-secondary font-bold">0.8%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">No-Show Abandonment Rate</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-high border border-[#254E58]/40 col-span-2 sm:col-span-1">
+<div class="font-ticket-code text-ticket-code-sm text-[#d8cdbc] font-bold">&lt; 30s</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Desk Handoff Interval</div>
+</div>
+</div>
+</div>
+<!-- Inline SVG Mini Data Graphic -->
+<div class="w-full lg:w-96 flex flex-col items-center justify-center p-space-lg rounded-2xl bg-surface-container-high border border-[#254E58]/50 shadow-inner">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-space-sm">Hourly Campus Queue Load</span>
+<svg class="w-full h-auto text-[#88BDBC]" fill="none" viewbox="0 0 320 160" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 140 Q 60 130 90 90 T 170 80 T 240 40 T 310 110" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<path d="M10 140 Q 60 130 90 90 T 170 80 T 240 40 T 310 110 L 310 150 L 10 150 Z" fill="currentColor" fill-opacity="0.12"></path>
+<circle cx="240" cy="40" fill="#88BDBC" r="5" stroke="#112D32" stroke-width="2"></circle>
+<text fill="#d8cdbc" font-family="JetBrains Mono" font-size="11" x="220" y="25">Peak 11:30 AM</text>
+</svg>
+<div class="flex items-center justify-between w-full mt-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<span>08:00 AM</span>
+<span>12:00 PM</span>
+<span>05:00 PM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: CALL TO ACTION BANNER -->
+<section class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-xl mb-12">
+<div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#112D32] via-[#254E58] to-[#122e33] border border-[#254E58] p-space-lg md:p-space-xl shadow-2xl">
+<div class="absolute -right-10 -bottom-10 w-96 h-96 bg-[#88BDBC]/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs text-center md:text-left">
+<span class="font-label-sm text-label-sm text-[#88BDBC] uppercase tracking-widest">Zero-Wait Guarantee</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">Ready to reclaim your campus day?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+              Connect your student ID or administrator credentials now to experience continuous synchronized dispatching across campus.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm w-full md:w-auto">
+<a class="w-full sm:w-auto text-center px-space-xl py-3.5 rounded-xl bg-[#88BDBC] text-[#002020] font-headline-sm text-body-md font-semibold shadow-[0_0_24px_rgba(136,189,188,0.35)] hover:shadow-[0_0_32px_rgba(136,189,188,0.55)] transition-all" data-path="explore-services" href="#">
+              Claim a Ticket Now
+            </a>
+<a class="w-full sm:w-auto text-center px-space-lg py-3.5 rounded-xl bg-surface-container-lowest border border-[#254E58] text-on-surface font-headline-sm text-body-md font-medium hover:bg-surface-container-low transition-colors" data-path="live-status" href="#">
+              View Live Board
+            </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  (function() {
+    // Dynamic Mock Countdown Micro-interaction
+    const el = document.getElementById('heroCountdown');
+    if (!el) return;
+    let secondsLeft = 222; // 3m 42s
+
+    setInterval(() => {
+      if (secondsLeft > 0) {
+        secondsLeft--;
+        const m = Math.floor(secondsLeft / 60);
+        const s = secondsLeft % 60;
+        el.textContent = `${m.toString().padStart(2, '0')}m : ${s.toString().padStart(2, '0')}s`;
+      } else {
+        el.textContent = "NOW CALLING";
+        el.classList.add('text-primary');
+      }
+    }, 1000);
+  })();
+</script></main><footer class="w-full bg-[#001114] border-t border-[#254E58]/50 mt-auto"><div class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg text-center md:text-left"><div class="flex flex-col gap-space-xs"><div class="flex items-center justify-center md:justify-start gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Campus Queue Command</span><span class="px-space-sm py-space-xs rounded-full bg-[#112D32] text-primary font-label-sm text-label-sm border border-primary/20">v2.4 Live Node</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Synchronized decentralized queue telemetry for Student Affairs, Financial Aid, Health Center, and Academic Advising.</p></div><div class="flex flex-wrap items-center justify-center gap-space-lg"><a class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" data-path="live-status" href="#"><span class="material-symbols-outlined text-[16px]">pulse_alert</span><span>System Telemetry</span></a><a class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" data-path="helpdesk" href="#"><span class="material-symbols-outlined text-[16px]">contact_support</span><span>Campus Helpdesk</span></a><a class="flex items-center gap-space-xs font-label-md text-label-md text-[#d8cdbc] hover:text-primary transition-colors" data-path="emergency-dispatch" href="#"><span class="material-symbols-outlined text-[16px]">bolt</span><span>Emergency Queue Dispatch</span></a></div></div><div class="max-w-[1360px] mx-auto px-margin-mobile lg:px-margin py-space-md border-t border-[#254E58]/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Campus Administration Systems. All rights reserved.</p><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span>Encrypted Hub</span><span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span>WebSocket Synced</span></div></div></footer></body></html>

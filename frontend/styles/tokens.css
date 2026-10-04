@@ -1,0 +1,29 @@
+:root {
+  color-scheme: light;
+  --canvas: #f8fafc;
+  --canvas-raised: #ffffff;
+  --surface: #f1f5f9;
+  --surface-soft: #eaf2ff;
+  --surface-strong: #dbeafe;
+  --surface-glass: rgba(255, 255, 255, 0.92);
+  --primary: #3b82f6;
+  --primary-bright: #2563eb;
+  --primary-ink: #ffffff;
+  --secondary: #64748b;
+  --text: #0f172a;
+  --text-soft: #334155;
+  --muted: #64748b;
+  --muted-dark: #6b7280;
+  --border: #e2e8f0;
+  --border-strong: #bfdbfe;
+  --warm: #b45309;
+  --danger: #dc2626;
+  --success: #047857;
+  --radius-sm: 9px;
+  --radius-md: 15px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+  --shadow-card: 0 18px 56px rgba(15, 23, 42, 0.12);
+  --font-main: 'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+}

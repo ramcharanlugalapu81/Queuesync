@@ -1,0 +1,82 @@
+@media (max-width: 410px) {
+  .page-width {
+    width: calc(100% - 28px);
+  }
+  .header-inner {
+    width: calc(100% - 24px);
+  }
+  .hero-copy h1 {
+    font-size: 41px;
+  }
+  .hero-kicker {
+    gap: 6px;
+    font-size: 6px;
+  }
+  .hero-stats strong {
+    font-size: 16px;
+  }
+  .hero-stats span:not(.stat-unit) {
+    font-size: 8px;
+  }
+  .hero-visual {
+    min-height: 315px;
+  }
+  .preview-ticket {
+    padding: 17px;
+  }
+  .preview-code {
+    font-size: 42px;
+  }
+  .chip-top {
+    left: -2px;
+  }
+  .chip-bottom {
+    right: -5px;
+  }
+  .service-grid {
+    gap: 8px;
+  }
+  .service-card-compact {
+    padding: 11px;
+  }
+  .service-card-compact .service-icon {
+    width: 31px;
+    height: 31px;
+  }
+  .service-card-compact .open-badge {
+    gap: 4px;
+    font-size: 6px;
+  }
+  .service-card-compact h3 {
+    font-size: 11px;
+  }
+  .service-card-compact .service-metrics strong {
+    font-size: 12px;
+  }
+  .service-card-compact .service-join {
+    font-size: 7px;
+  }
+  .section-heading h2 {
+    font-size: 22px;
+  }
+  .footer-links {
+    gap: 12px;
+  }
+  .footer-links a {
+    font-size: 8px;
+  }
+  .subsection-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .dispatch-service .service-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .dispatch-current > strong,
+  .dispatch-next > strong {
+    max-width: 135px;
+    font-size: 10px;
+  }
+}
